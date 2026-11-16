@@ -549,7 +549,8 @@ var filter = "all";
 var $ = function (s, r) { return (r || document).querySelector(s); };
 var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 function t(k) { return (T[k] && T[k][lang]) || k; }
-function waLink(msg) { return "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg); }
+// every WhatsApp message from the site ends with this tag, so the owner can count website enquiries
+function waLink(msg) { return "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg + (lang === "sw" ? " (Kupitia website)" : " (Via the website)")); }
 function pretty(n) { return n.replace(/^\+(\d{3})(\d{3})(\d{3})(\d{3})$/, "+$1 $2 $3 $4"); }
 function money(n) { return "TZS " + n.toLocaleString("en-US"); }
 function src(n) { return "img/" + n + ".jpg"; }
