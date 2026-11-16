@@ -43,7 +43,8 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backd
 header.on{border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;font-size:15px;white-space:nowrap}
-.brand svg{width:44px;height:22px;flex:none}
+.brand img{height:50px;width:auto;flex:none}
+.flogo{height:44px;width:auto;margin-bottom:10px}
 .brand b{color:var(--blue2);font-weight:800}
 .brand small{display:block;font:500 9px/1 Inter,sans-serif;letter-spacing:.34em;color:var(--mut);margin-top:3px}
 .links{display:flex;gap:28px;font-size:14px;color:var(--mut)}
@@ -276,7 +277,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .stats{gap:22px} .stat b{font-size:22px}
   .f2{display:none} .f1{top:-14px;right:8px}
   .est .btn{width:100%}
-  .brand{font-size:13px} .brand svg{width:36px}
+  .brand img{height:44px}
   .chips{flex-wrap:nowrap;overflow-x:auto;margin-inline:-20px;padding-inline:20px;scrollbar-width:none;width:calc(100% + 40px)}
   .chips::-webkit-scrollbar{display:none}
 }
@@ -293,8 +294,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header id="hd">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Dodoma Car Rental">
-      <svg viewBox="0 0 88 44" fill="none" stroke="#69a8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 32c2-9 10-11 18-12 6-9 14-13 24-13 11 0 19 4 25 12 7 1 12 4 13 13"/><path d="M26 20h40" opacity=".5"/></svg>
-      <span>DODOMA <b>CAR RENTAL</b><small>DODOMA · TANZANIA</small></span>
+      <img src="img/logo.png" alt="Dodoma Car Rental" width="644" height="274">
     </a>
     <nav class="links">
       <a href="#magari" data-t="n1"></a>
@@ -437,7 +437,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 </main>
 
-<footer><div class="wrap"><span>© <span id="yr"></span> Dodoma Car Rental · Mtendeni Street, Uhindini, Dodoma</span><span data-t="foot"></span></div></footer>
+<footer><div class="wrap"><img class="flogo" src="img/logo.png" alt="Dodoma Car Rental" width="644" height="274" loading="lazy" style="flex-basis:100%;object-fit:contain;object-position:left"></div><div class="wrap"><span>© <span id="yr"></span> Dodoma Car Rental · Mtendeni Street, Uhindini, Dodoma</span><span data-t="foot"></span></div></footer>
 
 <div class="bar">
   <a class="btn b-call" data-call><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-t="call"></span></a>
