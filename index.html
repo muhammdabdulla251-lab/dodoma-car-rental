@@ -286,6 +286,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .rv{opacity:1;transform:none}
 }
 </style>
+<script data-goatcounter="https://almindhry.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div id="prog"></div>
@@ -747,6 +748,7 @@ $("#book").addEventListener("submit", function (e) {
   var q = quote(), date = $("#bdate").value.split("-").reverse().join("/");
   var sw = "Habari, naomba kukodi " + q.car.name + " kuanzia tarehe " + date + ", kwa siku " + q.days + ". Safari: " + (q.where === "town" ? "mjini" : "nje ya mji") + ", " + (q.mode === "self" ? "self-drive" : "na dereva") + "." + (q.total ? " Makadirio kwenye website: " + money(q.total) + "." : "") + " Linapatikana?";
   var en = "Hello, I would like to rent the " + q.car.name + " from " + date + " for " + q.days + " day(s). Trip: " + (q.where === "town" ? "in town" : "outside town") + ", " + (q.mode === "self" ? "self-drive" : "with a driver") + "." + (q.total ? " Website estimate: " + money(q.total) + "." : "") + " Is it available?";
+  track("booking-form");
   window.open(waLink(lang === "sw" ? sw : en), "_blank", "noopener");
 });
 
@@ -763,6 +765,12 @@ window.addEventListener("scroll", function () {
   $("#prog").style.width = (p * 100) + "%";
   $("#hd").classList.toggle("on", h.scrollTop > 10);
 }, {passive: true});
+// Enquiry counter (GoatCounter): counts taps only, no names or numbers.
+function track(name) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({path: "dodoma-" + name, title: name, event: true}); } catch (err) {} }
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("a"); if (!a) return;
+  if (a.href.indexOf("wa.me/") > -1) track("whatsapp-click"); else if (a.protocol === "tel:") track("call-click");
+}, true);
 </script>
 </body>
 </html>
